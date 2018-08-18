@@ -11,10 +11,12 @@ import { ApiService } from './services/api.service';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserslistComponent } from './components/user/userslist/userslist.component';
 
 const appRoutes: Routes = [
   { path: 'signin', component: SigninComponent },
-  { path: 'signup',      component: SignupComponent },
+  { path: 'signup', component: SignupComponent },
+  {path:'users', component : UserslistComponent},
   { path: '',
     redirectTo: '/signin',
     pathMatch: 'full'
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    UserslistComponent
   ],
   imports: [
     BrowserModule,

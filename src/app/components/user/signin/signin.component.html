@@ -1,3 +1,20 @@
-<p>
-  signin works!
-</p>
+<div class='col-sm-12'>
+  <div *ngIf="showalert"><div class='alert alert-info'>{{alertmsg}}</div></div>
+  <div *ngIf="!profile.status">
+  <h3>Sign In</h3>
+  <div class='form-group'>
+  <input type='text' class='form-control' [(ngModel)]='user.name' placeholder="User Name"/>
+  </div>
+  <div class='form-group'>
+  <input type='password' class='form-control' [(ngModel)]='user.password' placeholder="Password"/>
+  </div>
+  <button class='btn btn-primary' (click)='login()'>Login</button>
+  </div>
+  <div *ngIf="profile.status">
+    <h3>Profile</h3>
+    <h5>Name : {{profile.data.name}}</h5>
+    <h5>Email : {{profile.data.email}}</h5>
+    <h5>Phone : {{profile.data.phone}}</h5>
+    <button class='btn btn-success' (click)='logout()'>Logout</button>
+  </div>
+</div>
